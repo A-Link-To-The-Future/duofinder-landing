@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="55" fill="url(#bgGrad)" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Outer ring glow -->
+  <circle cx="60" cy="60" r="52" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" opacity="0.6" filter="url(#glow)"/>
+  
+  <!-- Two stylized figures facing each other (duo concept) -->
+  <!-- Left figure -->
+  <g fill="#22d3ee" filter="url(#glow)">
+    <!-- Head -->
+    <circle cx="42" cy="45" r="8"/>
+    <!-- Body -->
+    <path d="M35 58 L42 52 L49 58 L46 75 L38 75 Z"/>
+    <!-- Arm -->
+    <rect x="38" y="55" width="8" height="12" rx="2" transform="rotate(-20 42 61)"/>
+  </g>
+  
+  <!-- Right figure (mirrored) -->
+  <g fill="#a855f7" filter="url(#glow)">
+    <!-- Head -->
+    <circle cx="78" cy="45" r="8"/>
+    <!-- Body -->
+    <path d="M71 58 L78 52 L85 58 L82 75 L74 75 Z"/>
+    <!-- Arm -->
+    <rect x="74" y="55" width="8" height="12" rx="2" transform="rotate(20 78 61)"/>
+  </g>
+  
+  <!-- Connection line between figures -->
+  <path d="M50 50 L60 55 L70 50" stroke="url(#accentGrad)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Game controller elements at bottom -->
+  <g fill="#64748b">
+    <!-- D-pad left -->
+    <rect x="32" y="82" width="12" height="4" rx="1"/>
+    <rect x="36" y="78" width="4" height="12" rx="1"/>
+    <!-- Buttons right -->
+    <circle cx="78" cy="82" r="3" fill="#ef4444"/>
+    <circle cx="86" cy="82" r="3" fill="#eab308"/>
+  </g>
+</svg>
