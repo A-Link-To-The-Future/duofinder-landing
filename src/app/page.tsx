@@ -61,7 +61,7 @@ export default function LandingPage() {
             Coming Soon — Join 500+ players on the waitlist
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight mx-auto text-center">
             Find Your Perfect
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
@@ -69,7 +69,7 @@ export default function LandingPage() {
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed text-center">
             Smart matchmaking for serious League of Legends players. We pair you with compatible teammates based on role, rank, and playstyle. No more solo queue nightmares.
           </p>
           
