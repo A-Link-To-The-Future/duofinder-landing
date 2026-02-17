@@ -8,15 +8,40 @@ export default function LandingPage() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleWaitlistSubmit = (e: React.FormEvent) => {
+  const [submitError, setSubmitError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setSubmitError(data.error || 'Something went wrong');
+        return;
+      }
+
       setSubmitted(true);
       setTimeout(() => {
         setShowModal(false);
         setSubmitted(false);
         setEmail('');
       }, 2000);
+    } catch (err) {
+      setSubmitError('Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -241,13 +266,20 @@ export default function LandingPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition text-sm text-center"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition text-sm text-center disabled:opacity-50"
                   />
+                  {submitError && (
+                    <p className="text-red-400 text-sm">{submitError}</p>
+                  )}
                   <button
                     type="submit"
-                    className="btn-primary btn-glow w-full py-3 rounded-xl"
+                    disabled={isSubmitting}
+                    className="btn-primary btn-glow w-full py-3 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <span className="justify-center">Get Early Access</span>
+                    <span className="justify-center">
+                      {isSubmitting ? 'Joining...' : 'Get Early Access'}
+                    </span>
                   </button>
                 </form>
                 <p className="text-slate-500 text-xs mt-4">
