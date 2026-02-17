@@ -37,7 +37,7 @@ export default function LandingPage() {
       <nav className="relative z-10 w-full">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="DuoFinder" className="h-10 w-auto rounded-lg object-cover" />
+            <img src="/logo.png" alt="DuoFinder" className="h-8 w-auto rounded-lg object-cover" />
             <span className="text-xl font-bold text-white tracking-tight">DuoFinder</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -204,10 +204,7 @@ export default function LandingPage() {
       <footer className="relative z-10 w-full px-6 lg:px-8 py-12 border-t border-slate-800/50">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <div className="flex items-center gap-2.5">
-              <img src="/logo.png" alt="DuoFinder" className="h-8 w-auto rounded-lg object-cover" />
-              <span className="text-lg font-bold text-white">DuoFinder</span>
-            </div>
+            <span className="text-lg font-bold text-white">DuoFinder</span>
             <p className="text-slate-500 text-sm order-last md:order-none">
               © 2025 DuoFinder. Not affiliated with Riot Games.
             </p>
@@ -232,10 +229,7 @@ export default function LandingPage() {
             
             {!submitted ? (
               <div className="text-center">
-                <div className="flex items-center justify-center gap-3 mb-2">
-                  <img src="/logo.png" alt="DuoFinder" className="h-10 w-auto rounded-xl object-cover" />
-                  <h3 className="text-xl font-bold text-white">Join the Waitlist</h3>
-                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Join the Waitlist</h3>
                 <p className="text-slate-400 text-sm mb-6">
                   Be the first to find your perfect duo. Early access members get lifetime premium features.
                 </p>
