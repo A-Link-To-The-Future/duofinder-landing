@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowRight, MessageCircle, X, CheckCircle, Sparkles, Target, Zap, Headphones } from 'lucide-react';
+import { ArrowRight, MessageCircle, X, CheckCircle, Target, Zap, Headphones } from 'lucide-react';
 
 export default function LandingPage() {
   const [showModal, setShowModal] = useState(false);
@@ -36,10 +36,8 @@ export default function LandingPage() {
       {/* Navbar - centered container */}
       <nav className="relative z-10 w-full">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
+          <div className="flex items-center gap-3">
+            <img src="/logo.png" alt="DuoFinder" className="h-10 w-auto rounded-lg object-cover" />
             <span className="text-xl font-bold text-white tracking-tight">DuoFinder</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -207,9 +205,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-white" />
-              </div>
+              <img src="/logo.png" alt="DuoFinder" className="h-8 w-auto rounded-lg object-cover" />
               <span className="text-lg font-bold text-white">DuoFinder</span>
             </div>
             <p className="text-slate-500 text-sm order-last md:order-none">
@@ -237,9 +233,7 @@ export default function LandingPage() {
             {!submitted ? (
               <div className="text-center">
                 <div className="flex items-center justify-center gap-3 mb-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-white" />
-                  </div>
+                  <img src="/logo.png" alt="DuoFinder" className="h-10 w-auto rounded-xl object-cover" />
                   <h3 className="text-xl font-bold text-white">Join the Waitlist</h3>
                 </div>
                 <p className="text-slate-400 text-sm mb-6">
