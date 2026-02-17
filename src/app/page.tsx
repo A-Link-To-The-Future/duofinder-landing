@@ -41,14 +41,14 @@ export default function LandingPage() {
             <span className="text-xl font-bold text-white tracking-tight">DuoFinder</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection('features')} className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Features</button>
-            <button onClick={() => scrollToSection('how-it-works')} className="text-sm font-medium text-slate-400 hover:text-white transition-colors">How It Works</button>
+            <button onClick={() => scrollToSection('features')} className="text-sm font-medium text-slate-400 hover:text-cyan-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-cyan-400 after:to-purple-500 after:transition-all hover:after:w-full">Features</button>
+            <button onClick={() => scrollToSection('how-it-works')} className="text-sm font-medium text-slate-400 hover:text-cyan-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-cyan-400 after:to-purple-500 after:transition-all hover:after:w-full">How It Works</button>
           </div>
           <button 
             onClick={() => setShowModal(true)}
-            className="bg-white text-slate-900 font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-slate-200 transition-all duration-200 hover:scale-105"
+            className="btn-primary btn-glow text-sm py-2.5 px-5"
           >
-            Get Early Access
+            <span>Get Early Access</span>
           </button>
         </div>
       </nav>
@@ -76,14 +76,16 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button 
               onClick={() => setShowModal(true)}
-              className="group bg-white text-slate-900 font-semibold px-8 py-4 rounded-full flex items-center gap-2 hover:bg-slate-200 transition-all duration-200 hover:scale-105"
+              className="btn-primary btn-glow group"
             >
-              Join Waitlist
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <span>
+                Join Waitlist
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
             </button>
             <button 
               onClick={() => scrollToSection('features')}
-              className="text-slate-400 font-medium px-8 py-4 rounded-full hover:text-white transition-colors"
+              className="btn-secondary"
             >
               Learn More
             </button>
@@ -181,17 +183,17 @@ export default function LandingPage() {
             Join the waitlist today and be the first to know when we launch. Early adopters get lifetime premium perks.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button 
+            <button
               onClick={() => setShowModal(true)}
-              className="bg-white text-slate-900 font-semibold px-8 py-4 rounded-full hover:bg-slate-200 transition-all duration-200 hover:scale-105 w-full sm:w-auto"
+              className="btn-primary btn-glow w-full sm:w-auto"
             >
-              Join Waitlist
+              <span>Join Waitlist</span>
             </button>
-            <a 
+            <a
               href="https://discord.gg/duofinder"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 text-slate-400 font-medium px-8 py-4 rounded-full border border-slate-700 hover:border-slate-500 hover:text-white transition-all w-full sm:w-auto"
+              className="btn-secondary inline-flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <MessageCircle className="w-4 h-4" />
               Join Discord
@@ -220,9 +222,9 @@ export default function LandingPage() {
       {showModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-md w-full relative mx-auto">
-            <button 
+            <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-slate-500 hover:text-white transition"
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-slate-500 hover:text-white hover:bg-slate-800 transition-all duration-200"
             >
               <X className="w-5 h-5" />
             </button>
@@ -244,9 +246,9 @@ export default function LandingPage() {
                   />
                   <button
                     type="submit"
-                    className="w-full bg-white text-slate-900 font-semibold py-3 rounded-xl hover:bg-slate-200 transition"
+                    className="btn-primary btn-glow w-full py-3 rounded-xl"
                   >
-                    Get Early Access
+                    <span className="justify-center">Get Early Access</span>
                   </button>
                 </form>
                 <p className="text-slate-500 text-xs mt-4">
