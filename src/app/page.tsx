@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Users, Zap, Shield, ArrowRight, MessageCircle, X, CheckCircle, Sparkles, Target, Headphones } from 'lucide-react';
+import { ArrowRight, MessageCircle, X, CheckCircle, Sparkles, Target, Zap, Headphones } from 'lucide-react';
 
 export default function LandingPage() {
   const [showModal, setShowModal] = useState(false);
@@ -29,85 +29,89 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#0a0e1a] overflow-x-hidden">
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Navbar */}
-      <nav className="relative z-10 flex items-center justify-between px-6 lg:px-12 py-5 max-w-7xl mx-auto">
-        <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-            <Sparkles className="w-5 h-5 text-white" />
+      {/* Navbar - centered container */}
+      <nav className="relative z-10 w-full">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-xl font-bold text-white tracking-tight">DuoFinder</span>
           </div>
-          <span className="text-xl font-bold text-white tracking-tight">DuoFinder</span>
-        </div>
-        <div className="hidden md:flex items-center gap-8">
-          <button onClick={() => scrollToSection('features')} className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Features</button>
-          <button onClick={() => scrollToSection('how-it-works')} className="text-sm font-medium text-slate-400 hover:text-white transition-colors">How It Works</button>
-        </div>
-        <button 
-          onClick={() => setShowModal(true)}
-          className="bg-white text-slate-900 font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-slate-200 transition-all duration-200 hover:scale-105"
-        >
-          Get Early Access
-        </button>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative z-10 px-6 lg:px-12 pt-16 pb-24 max-w-6xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-medium mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          Coming Soon — Join 500+ players on the waitlist
-        </div>
-        
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
-          Find Your Perfect
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
-            League Duo
-          </span>
-        </h1>
-        
-        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Smart matchmaking for serious League of Legends players. We pair you with compatible teammates based on role, rank, and playstyle. No more solo queue nightmares.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="hidden md:flex items-center gap-8">
+            <button onClick={() => scrollToSection('features')} className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Features</button>
+            <button onClick={() => scrollToSection('how-it-works')} className="text-sm font-medium text-slate-400 hover:text-white transition-colors">How It Works</button>
+          </div>
           <button 
             onClick={() => setShowModal(true)}
-            className="group bg-white text-slate-900 font-semibold px-8 py-4 rounded-full flex items-center gap-2 hover:bg-slate-200 transition-all duration-200 hover:scale-105"
+            className="bg-white text-slate-900 font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-slate-200 transition-all duration-200 hover:scale-105"
           >
-            Join Waitlist
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </button>
-          <button 
-            onClick={() => scrollToSection('features')}
-            className="text-slate-400 font-medium px-8 py-4 rounded-full hover:text-white transition-colors"
-          >
-            Learn More
+            Get Early Access
           </button>
         </div>
+      </nav>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 max-w-xl mx-auto pt-12 border-t border-slate-800/50">
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-white mb-1">Role</div>
-            <div className="text-slate-500 text-sm">Based</div>
+      {/* Hero Section - fully centered */}
+      <section className="relative z-10 w-full px-6 lg:px-8 pt-16 pb-24">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-medium mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Coming Soon — Join 500+ players on the waitlist
           </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-white mb-1">Rank</div>
-            <div className="text-slate-500 text-sm">Matched</div>
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight mx-auto">
+            Find Your Perfect
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+              League Duo
+            </span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Smart matchmaking for serious League of Legends players. We pair you with compatible teammates based on role, rank, and playstyle. No more solo queue nightmares.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <button 
+              onClick={() => setShowModal(true)}
+              className="group bg-white text-slate-900 font-semibold px-8 py-4 rounded-full flex items-center gap-2 hover:bg-slate-200 transition-all duration-200 hover:scale-105"
+            >
+              Join Waitlist
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+            <button 
+              onClick={() => scrollToSection('features')}
+              className="text-slate-400 font-medium px-8 py-4 rounded-full hover:text-white transition-colors"
+            >
+              Learn More
+            </button>
           </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-white mb-1">Live</div>
-            <div className="text-slate-500 text-sm">Queue</div>
+
+          {/* Stats - centered */}
+          <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-xl mx-auto pt-12 border-t border-slate-800/50">
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">Role</div>
+              <div className="text-slate-500 text-xs sm:text-sm">Based</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">Rank</div>
+              <div className="text-slate-500 text-xs sm:text-sm">Matched</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">Live</div>
+              <div className="text-slate-500 text-xs sm:text-sm">Queue</div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="relative z-10 px-6 lg:px-12 py-24 bg-slate-900/30">
-        <div className="max-w-6xl mx-auto">
+      {/* Features Section - centered */}
+      <section id="features" className="relative z-10 w-full px-6 lg:px-8 py-24 bg-slate-900/30">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Built for Serious Players
@@ -117,7 +121,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <FeatureCard 
               icon={<Target className="w-5 h-5" />}
               title="Smart Matching"
@@ -137,9 +141,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section id="how-it-works" className="relative z-10 px-6 lg:px-12 py-24">
-        <div className="max-w-4xl mx-auto">
+      {/* How It Works - centered */}
+      <section id="how-it-works" className="relative z-10 w-full px-6 lg:px-8 py-24">
+        <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
             How It Works
           </h2>
@@ -169,19 +173,19 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative z-10 px-6 lg:px-12 py-24">
-        <div className="max-w-3xl mx-auto text-center">
+      {/* CTA Section - centered */}
+      <section className="relative z-10 w-full px-6 lg:px-8 py-24">
+        <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Find Your Duo?
           </h2>
           <p className="text-slate-400 mb-10 max-w-lg mx-auto">
             Join the waitlist today and be the first to know when we launch. Early adopters get lifetime premium perks.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button 
               onClick={() => setShowModal(true)}
-              className="bg-white text-slate-900 font-semibold px-8 py-4 rounded-full hover:bg-slate-200 transition-all duration-200 hover:scale-105"
+              className="bg-white text-slate-900 font-semibold px-8 py-4 rounded-full hover:bg-slate-200 transition-all duration-200 hover:scale-105 w-full sm:w-auto"
             >
               Join Waitlist
             </button>
@@ -189,7 +193,7 @@ export default function LandingPage() {
               href="https://discord.gg/duofinder"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 text-slate-400 font-medium px-8 py-4 rounded-full border border-slate-700 hover:border-slate-500 hover:text-white transition-all"
+              className="inline-flex items-center justify-center gap-2 text-slate-400 font-medium px-8 py-4 rounded-full border border-slate-700 hover:border-slate-500 hover:text-white transition-all w-full sm:w-auto"
             >
               <MessageCircle className="w-4 h-4" />
               Join Discord
@@ -198,21 +202,23 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative z-10 px-6 lg:px-12 py-12 border-t border-slate-800/50">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-white" />
+      {/* Footer - centered */}
+      <footer className="relative z-10 w-full px-6 lg:px-8 py-12 border-t border-slate-800/50">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-lg font-bold text-white">DuoFinder</span>
             </div>
-            <span className="text-lg font-bold text-white">DuoFinder</span>
-          </div>
-          <p className="text-slate-500 text-sm">
-            © 2025 DuoFinder. Not affiliated with Riot Games.
-          </p>
-          <div className="flex gap-6 text-sm text-slate-400">
-            <a href="https://twitter.com/duofinder" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Twitter</a>
-            <a href="https://discord.gg/duofinder" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Discord</a>
+            <p className="text-slate-500 text-sm order-last md:order-none">
+              © 2025 DuoFinder. Not affiliated with Riot Games.
+            </p>
+            <div className="flex gap-6 text-sm text-slate-400">
+              <a href="https://twitter.com/duofinder" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Twitter</a>
+              <a href="https://discord.gg/duofinder" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Discord</a>
+            </div>
           </div>
         </div>
       </footer>
@@ -220,7 +226,7 @@ export default function LandingPage() {
       {/* Waitlist Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-md w-full relative">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-md w-full relative mx-auto">
             <button 
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-slate-500 hover:text-white transition"
@@ -229,8 +235,8 @@ export default function LandingPage() {
             </button>
             
             {!submitted ? (
-              <>
-                <div className="flex items-center gap-3 mb-2">
+              <div className="text-center">
+                <div className="flex items-center justify-center gap-3 mb-2">
                   <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
                     <Sparkles className="w-5 h-5 text-white" />
                   </div>
@@ -246,7 +252,7 @@ export default function LandingPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition text-sm"
+                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition text-sm text-center"
                   />
                   <button
                     type="submit"
@@ -255,10 +261,10 @@ export default function LandingPage() {
                     Get Early Access
                   </button>
                 </form>
-                <p className="text-slate-500 text-xs mt-4 text-center">
+                <p className="text-slate-500 text-xs mt-4">
                   No spam. Unsubscribe anytime.
                 </p>
-              </>
+              </div>
             ) : (
               <div className="text-center py-8">
                 <div className="w-14 h-14 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -279,7 +285,7 @@ export default function LandingPage() {
 
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
   return (
-    <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-7 hover:border-slate-700 transition group text-center">
+    <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-7 hover:border-slate-700 transition group text-center mx-auto w-full">
       <div className="w-11 h-11 bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 mx-auto mb-4 group-hover:bg-slate-700 transition">
         {icon}
       </div>
@@ -291,14 +297,12 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode, titl
 
 function Step({ number, title, description }: { number: string, title: string, description: string }) {
   return (
-    <div className="flex gap-5 items-start">
-      <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 font-bold text-sm shrink-0">
+    <div className="bg-slate-900/30 rounded-2xl p-6 text-center mx-auto w-full">
+      <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 font-bold text-sm mx-auto mb-4">
         {number}
       </div>
-      <div className="pt-1">
-        <h3 className="text-lg font-semibold text-white mb-1">{title}</h3>
-        <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
-      </div>
+      <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+      <p className="text-slate-400 text-sm leading-relaxed max-w-md mx-auto">{description}</p>
     </div>
   );
 }
