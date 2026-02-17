@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email
     await resend.emails.send({
-      from: 'DuoFinder <hello@duofinder.gg>',
+      from: 'DuoFinder <hello@duofinder.pro>',
       to: email,
       subject: "You're on the DuoFinder waitlist!",
       html: `
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
           </div>
           <p style="color: #64748b; font-size: 14px; margin-top: 30px;">
             Not affiliated with Riot Games.<br>
-            <a href="https://duofinder.gg" style="color: #22d3ee;">duofinder.gg</a>
+            <a href="https://duofinder.pro" style="color: #22d3ee;">duofinder.pro</a>
           </p>
         </div>
       `,
